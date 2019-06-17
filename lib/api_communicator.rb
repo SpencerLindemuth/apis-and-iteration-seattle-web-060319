@@ -21,7 +21,7 @@ def get_character_movies_from_api(character_name)
       return ele["films"]
     end
   end
-  return nil
+  return []
 end
 
 def print_movies(films)
