@@ -17,7 +17,7 @@ def get_character_movies_from_api(character_name)
   #  and that method will do some nice presentation stuff like puts out a list
   #  of movies by title. Have a play around with the puts with other info about a given film.
   response_hash["results"].each do |ele|
-    if ele["name"] == character_name
+    if ele["name"].downcase == character_name
       return ele["films"]
     end
   end
