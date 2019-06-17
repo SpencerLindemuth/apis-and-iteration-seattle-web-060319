@@ -25,7 +25,11 @@ def get_character_movies_from_api(character_name)
 end
 
 def print_movies(films)
-  # some iteration magic and puts out the movies in a nice list
+  films.each do |film|
+    response_string = RestClient.get(film)
+    response_hash = JSON.parse(response_string)
+    puts response_hash["title"]
+  end
 end
 
 def show_character_movies(character)
